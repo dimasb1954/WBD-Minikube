@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "8a916265-3dd4-4c06-a806-83b9e039c109",
+		"name": "Auth",
+		"description": "User authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40120542",
+		"_collection_link": "https://milestone2wbd.postman.co/workspace/MIlestone2WBD-Workspace~7bd11c04-188b-4a17-865e-0bf31a087369/collection/37083153-8a916265-3dd4-4c06-a806-83b9e039c109?action=share&source=collection_link&creator=40120542"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\": \"1Eunice81@yahoo.com\",\r\n    \"password\": \"password_123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"bagassambega@gmail.com\",\r\n    \"username\": \"bagassambega\",\r\n    \"password\": \"Password 123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

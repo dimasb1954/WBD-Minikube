@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "9e032a2a-a5b5-4bdf-adb8-f71e05a76e57",
+		"name": "Feeds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40120542",
+		"_collection_link": "https://milestone2wbd.postman.co/workspace/MIlestone2WBD-Workspace~7bd11c04-188b-4a17-865e-0bf31a087369/collection/37083153-9e032a2a-a5b5-4bdf-adb8-f71e05a76e57?action=share&source=collection_link&creator=40120542"
+	},
+	"item": [
+		{
+			"name": "Home Feeds",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiIxTHVybGluZV9MYXJraW5AaG90bWFpbC5jb20iLCJyb2xlIjoiam9iX3NlZWtlciIsImlhdCI6MTczMzc1Mzk1NzAwMiwiZXhwIjoxNzMzNzU0MDQzNDAyfQ.ntyyafgU1L3Y5NRF_V-wcpL8cUXAJ3Y-zAn_5dtx5Nk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/feed?limit=12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"feed"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiIxTHVybGluZV9MYXJraW5AaG90bWFpbC5jb20iLCJyb2xlIjoiam9iX3NlZWtlciIsImlhdCI6MTczMzc1Mzk1NzAwMiwiZXhwIjoxNzMzNzU0MDQzNDAyfQ.ntyyafgU1L3Y5NRF_V-wcpL8cUXAJ3Y-zAn_5dtx5Nk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"content\": \"Quis abundans adhaero copia suus.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/feed"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Feeds By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/feed/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"feed",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Feed",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"content\": \"Quis abundans adhaero copia suus.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/feed/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"feed",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "916"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Feed",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiIxTHVybGluZV9MYXJraW5AaG90bWFpbC5jb20iLCJyb2xlIjoiam9iX3NlZWtlciIsImlhdCI6MTczMzc1Mzk1NzAwMiwiZXhwIjoxNzMzNzU0MDQzNDAyfQ.ntyyafgU1L3Y5NRF_V-wcpL8cUXAJ3Y-zAn_5dtx5Nk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/feed/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"feed",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "916"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

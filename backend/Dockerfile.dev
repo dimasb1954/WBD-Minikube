@@ -1,0 +1,24 @@
+FROM node:20-alpine
+
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+
+WORKDIR /home/node/app
+
+USER node
+
+COPY --chown=node:node package.json ./
+COPY --chown=node:node prisma ./prisma/
+
+RUN npm cache clean --force && \
+    npm install --loglevel verbose
+
+RUN npx prisma generate
+
+COPY --chown=node:node . .
+
+EXPOSE ${PORT}
+
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+    CMD node -e "console.log('healthcheck lagi')" || exit 1
+
+CMD ["npm", "run", "dev"]

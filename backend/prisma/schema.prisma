@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          BigInt   @id @default(autoincrement())
+  username    String   @unique @map("username")
+  email       String   @unique @map("email")
+  fullName    String   @map("full_name")
+  passwordHash String  @map("password_hash")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  workHistory  String?  @map("work_history")
+  skills       String?  @map("skills")
+  profilePic   String?  @map("profile_photo_path")
+
+  feeds       Feed[]
+  chatsFrom   Chat[]   @relation("ChatFrom")
+  chatsTo     Chat[]   @relation("ChatTo")
+
+  connectionsInitiated Connection[] @relation("ConnectionFrom")
+  connectionsReceived  Connection[] @relation("ConnectionTo")
+
+  requestsSent     ConnectionRequest[] @relation("RequestFrom")
+  requestsReceived ConnectionRequest[] @relation("RequestTo")
+
+  pushSubscriptions PushSubscription[]
+
+  @@map("users")
+}
+
+model Feed {
+  id        BigInt   @id @default(autoincrement()) @map("id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  content   String   @map("content")
+  userId    BigInt   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("feed")
+}
+
+model Chat {
+  id        BigInt   @id @default(autoincrement())
+  timestamp DateTime @default(now())
+  fromId    BigInt   @map("from_id")
+  toId      BigInt   @map("to_id")
+  message   String
+
+  from      User     @relation("ChatFrom", fields: [fromId], references: [id], onDelete: Cascade)
+  to        User     @relation("ChatTo", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@map("chat")
+}
+
+model Connection {
+  fromId    BigInt   @map("from_id")
+  toId      BigInt   @map("to_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  from      User     @relation("ConnectionFrom", fields: [fromId], references: [id], onDelete: Cascade)
+  to        User     @relation("ConnectionTo", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@id([fromId, toId])
+  @@unique([fromId, toId])
+  @@map("connection")
+}
+
+model ConnectionRequest {
+  fromId    BigInt   @map("from_id")
+  toId      BigInt   @map("to_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  from      User     @relation("RequestFrom", fields: [fromId], references: [id], onDelete: Cascade)
+  to        User     @relation("RequestTo", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@id([fromId, toId])
+  @@unique([fromId, toId])
+  @@map("connection_request")
+}
+
+model PushSubscription {
+  endpoint  String   @id
+  userId    BigInt?  @map("user_id")
+  keys      Json
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("push_subscriptions")
+}

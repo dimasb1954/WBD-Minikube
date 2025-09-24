@@ -1,0 +1,12 @@
+{
+  "watch": ["src", ".env", "*"],
+  "ext": "ts, json, js",
+  "exec": "npx tsx src/index.ts",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "restartable": "rs",
+  "legacy-watch": true,
+  "polling": true,
+  "poll": 100
+}

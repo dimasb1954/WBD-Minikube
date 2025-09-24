@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "4c79dafe-cd00-46bd-8259-bdda33618d31",
+		"name": "Connection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40120542",
+		"_collection_link": "https://milestone2wbd.postman.co/workspace/MIlestone2WBD-Workspace~7bd11c04-188b-4a17-865e-0bf31a087369/collection/40120542-4c79dafe-cd00-46bd-8259-bdda33618d31?action=share&source=collection_link&creator=40120542"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Network By ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Connected Users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Connected Users By ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add Connection Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiIxTHVybGluZV9MYXJraW5AaG90bWFpbC5jb20iLCJyb2xlIjoiam9iX3NlZWtlciIsImlhdCI6MTczMzc1OTI2OTEyNywiZXhwIjoxNzMzNzU5MzU1NTI3fQ.1lbW00QzNJRnhFu8Ryk5rTSnycCjkLXh-srTtqa4K-M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users/requests/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"requests",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "222"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Connection Request",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiIxTHVybGluZV9MYXJraW5AaG90bWFpbC5jb20iLCJyb2xlIjoiam9iX3NlZWtlciIsImlhdCI6MTczMzc1OTI2OTEyNywiZXhwIjoxNzMzNzU5MzU1NTI3fQ.1lbW00QzNJRnhFu8Ryk5rTSnycCjkLXh-srTtqa4K-M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users/requests/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"requests",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "222"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Connection",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiIxTHVybGluZV9MYXJraW5AaG90bWFpbC5jb20iLCJyb2xlIjoiam9iX3NlZWtlciIsImlhdCI6MTczMzc1OTI2OTEyNywiZXhwIjoxNzMzNzU5MzU1NTI3fQ.1lbW00QzNJRnhFu8Ryk5rTSnycCjkLXh-srTtqa4K-M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users/connections/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"connections",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "994"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recommendation",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

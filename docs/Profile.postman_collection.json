@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "861e591a-64ae-4756-aa81-6a9e9e70c59a",
+		"name": "Profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40120542",
+		"_collection_link": "https://milestone2wbd.postman.co/workspace/MIlestone2WBD-Workspace~7bd11c04-188b-4a17-865e-0bf31a087369/collection/40120542-861e591a-64ae-4756-aa81-6a9e9e70c59a?action=share&source=collection_link&creator=40120542"
+	},
+	"item": [
+		{
+			"name": "Get Profile",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiZW1haWwiOiIxTHVybGluZV9MYXJraW5AaG90bWFpbC5jb20iLCJyb2xlIjoiam9iX3NlZWtlciIsImlhdCI6MTczMzc1Mzk1NzAwMiwiZXhwIjoxNzMzNzU0MDQzNDAyfQ.ntyyafgU1L3Y5NRF_V-wcpL8cUXAJ3Y-zAn_5dtx5Nk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"username\": \"Mister X\",\r\n    \"profile_photo\": \"none\",\r\n    \"name\": \"Xavier\",\r\n    \"work_history\": \"Teacher\",\r\n    \"skills\": \"Mind control\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/profile/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"profile",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
